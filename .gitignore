@@ -1,0 +1,13 @@
+# Mac
+.DS_Store
+__MACOSX/
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# コンパイル済みCSS（Live Sass Compilerが生成するファイル）
+assets/css/style.css
+assets/css/style.css.map
