@@ -2,6 +2,9 @@
 
 PROJECT_NAME=$1
 
+# GitHub CLIのPATHを追加（Windows環境対応）
+export PATH="$PATH:/c/Program Files/GitHub CLI"
+
 if [ -z "$PROJECT_NAME" ]; then
   echo "使い方: ./new-project.sh <プロジェクト名>"
   exit 1
