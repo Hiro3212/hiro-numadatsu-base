@@ -17,7 +17,11 @@ echo ""
 echo "プロジェクト名：$PROJECT_NAME"
 echo ""
 
+# クローン先をclaude_workspace直下に設定（hiro-numadatsu-baseの親ディレクトリ）
+PROJECTS_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
 # テンプレートからGitHubリポジトリを作成してクローン
+cd "$PROJECTS_DIR"
 gh repo create "$PROJECT_NAME" \
   --template Hiro3212/hiro-numadatsu-base \
   --private \
@@ -26,9 +30,9 @@ gh repo create "$PROJECT_NAME" \
 echo ""
 echo "✅ セットアップ完了しました。"
 echo ""
-echo "- ディレクトリ：$(pwd)/$PROJECT_NAME"
+echo "- ディレクトリ：$PROJECTS_DIR/$PROJECT_NAME"
 echo "- GitHubリポジトリ：https://github.com/Hiro3212/$PROJECT_NAME (private)"
 echo ""
 echo "次のステップ："
-echo "1. Antigravity で $(pwd)/$PROJECT_NAME を開く"
+echo "1. Antigravity で $PROJECTS_DIR/$PROJECT_NAME を開く"
 echo "2. /html-site を実行する"
